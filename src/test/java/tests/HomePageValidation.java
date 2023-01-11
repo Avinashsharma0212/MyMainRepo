@@ -1,7 +1,6 @@
 package tests;
-import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
+
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -31,14 +30,8 @@ public class HomePageValidation extends Base{
 	}
 	
 	@Test(priority=1)
-	public void lowcosttest() throws InterruptedException, IOException {
+	public void lowcosttest() throws InterruptedException {
 		
-        Properties prop = new Properties();
-        prop.load(HomePageValidation.class.getClassLoader().getResourceAsStream("MyProject.properties"));
-        String UName = prop.getProperty("uname");
-        String Pwd = prop.getProperty("pwd");
-        System.out.println("usernameValue is ==> " +UName);
-        System.out.println("passwordValue is ==> " +Pwd);
 		homepage = new HomePageObjects(driver);
 		homepage.SearchFlightHeader().isDisplayed();
 		driver.navigate().refresh();
